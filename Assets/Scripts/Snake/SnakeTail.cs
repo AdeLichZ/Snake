@@ -23,9 +23,9 @@ public class SnakeTail : MonoBehaviour
 
         if(distance > CircleDiameter)
         {
-            Vector3 direction = ((Vector3) SnakeHead.position - positions[0].normalized);
+            Vector3 direction = ((Vector3) SnakeHead.position - positions[0]).normalized;
 
-            positions.Insert(0, SnakeHead.position);
+            positions.Insert(0, positions[0] + direction * CircleDiameter);
             positions.RemoveAt(positions.Count - 1);
             distance -= CircleDiameter;
         }

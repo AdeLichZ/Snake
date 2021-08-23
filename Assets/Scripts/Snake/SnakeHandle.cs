@@ -41,11 +41,11 @@ public class SnakeHandle : MonoBehaviour
         {
             if (Input.GetTouch(i).position.x < ScreenWidth / 2)
             {
-                RightHandle();
+                LeftHandle();
             }
             if (Input.GetTouch(i).position.x > ScreenWidth / 2)
             {
-                LeftHandle();
+                RightHandle();
             }
         }
     }
@@ -56,12 +56,12 @@ public class SnakeHandle : MonoBehaviour
         transform.localPosition = new Vector3(clampedXPos, transform.localPosition.y, transform.localPosition.z);
     }
 
-    public void LeftHandle()
+    public void RightHandle()
     {
         transform.position = Vector3.MoveTowards(transform.position, transform.position - Vector3.left, speed * Time.deltaTime);
     }
 
-    public void RightHandle()
+    public void LeftHandle()
     {
         transform.position = Vector3.MoveTowards(transform.position, transform.position - Vector3.right, speed * Time.deltaTime);
     }

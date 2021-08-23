@@ -48,4 +48,8 @@ public class Fever : MonoBehaviour
         collisionController.inFever = false;
         yield return new WaitForSeconds(0.1f);
     }
+    private void OnDestroy()
+    {
+        CollisionController.CountingCrystals -= FeverCondition;
+    }
 }

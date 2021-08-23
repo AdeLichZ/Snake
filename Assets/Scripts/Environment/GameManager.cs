@@ -66,4 +66,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         gameMenu.transform.GetChild(0).gameObject.SetActive(false);
     }
+    private void OnDestroy()
+    {
+        CollisionController.CountingCrystals -= CrystalsCount;
+        CollisionController.CountingFood -= GoodFoodCount;
+    }
 }
